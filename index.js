@@ -9,20 +9,20 @@ console.log('Initial state', store.getState());
 
 //  This will work to see the result after update state 
 const unsubscribe = store.subscribe(() => {
-  // console.log('Updated State', store.getState());
+  console.log('Updated State', store.getState());
 });
 
 
 // Dispatching action 
-store.dispatch(cakeActions.order());
-store.dispatch(cakeActions.order());
-store.dispatch(cakeActions.order());
+store.dispatch(cakeActions.ordered());
+store.dispatch(cakeActions.ordered());
+store.dispatch(cakeActions.ordered());
 store.dispatch(cakeActions.restocked(3));
 
 
-store.dispatch(icecreamActions.order());
-store.dispatch(icecreamActions.order());
-store.dispatch(icecreamActions.order());
+store.dispatch(icecreamActions.ordered());
+store.dispatch(icecreamActions.ordered());
+store.dispatch(icecreamActions.ordered());
 store.dispatch(icecreamActions.restocked(3));
 
 unsubscribe();
