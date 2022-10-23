@@ -9,7 +9,7 @@ console.log('Initial state', store.getState());
 
 //  This will work to see the result after update state 
 const unsubscribe = store.subscribe(() => {
-  console.log('Updated State', store.getState());
+  // console.log('Updated State', store.getState());
 });
 
 

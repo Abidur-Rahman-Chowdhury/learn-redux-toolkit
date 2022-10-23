@@ -8,6 +8,7 @@ In this repository we will learn how to implement redux-toolkit library
 - How to implement feature 
 - How to configure store 
 - How to dispatch action 
+- How to use redux-logger 
 
 ## How to implement feature 
 
@@ -126,4 +127,39 @@ store.dispatch(cakeActions.order());
 store.dispatch(cakeActions.restocked(3));
 
 unsubscribe();
+```
+
+
+## How to use redux-logger 
+
+```javascript
+// first install and  import redux-logger app/store.js
+
+/**
+ * after installation import redux-logger  
+ * 
+  */
+
+const reduxLogger = require('redux-logger');
+
+/**
+ * after that create  logger 
+  */
+
+ const logger = reduxLogger.createLogger()
+
+ /**
+  * after that pass it into store as property middleware: () => and this property takes an arrow function with parameter getDefaultState.
+   */
+
+const store = configureStore({
+  reducer: {
+    cake: cakeReducer,
+    icecream: icecreamReducer,
+  },
+  // follow this line of code blocks
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(logger),
+});
+
 ```
